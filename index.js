@@ -21,4 +21,13 @@ app.get('/details', function(req, res, next) {
     )
 })
 
+app.get('/usage', function(req, res, next) {
+    connection.query(
+        'SELECT * FROM usage',
+        function(err, results, fields){
+            res.json(results)
+        }
+    )
+})
+
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
