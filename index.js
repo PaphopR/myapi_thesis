@@ -1,6 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const mysql = require('mysql2')
+const PORT = process.env.PORT || 3000;
 require('dotenv').config()
 
 const app = express()
@@ -20,4 +21,4 @@ app.get('/details', function(req, res, next) {
     )
 })
 
-app.listen(process.env.PORT || 3000)
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
